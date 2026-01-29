@@ -51,8 +51,8 @@ int main(){
     scanf(" %d", &pontosturisticos1);
 
 
-    densidadepop1 = (float)(populacao1 / area1);
-    pibpercapita1 = (float)(pib1 / populacao1);
+    densidadepop1 = (float) populacao1 / area1;
+    pibpercapita1 = (float) pib1 / populacao1;
     
 
     printf("\nCarta 1 cadastrada com sucesso!\n"); //informa o cadastro da primeira carta ao usuário
