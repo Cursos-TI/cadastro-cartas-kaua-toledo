@@ -122,12 +122,15 @@ int main(){
     float SuperPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + inversoDensidadePop1 + pibpercapita1;
     float SuperPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + inversoDensidadePop2 + pibpercapita2;
     
+    char buffer[10];
+    
+    getchar(); //consome o '\n' do último scanf
+   
     printf("\nDigite qualquer tecla para iniciar a comparação das cartas...\n");
-    getchar(); //aguarda o usuário digitar algo antes de continuar*** NECESSÁRIO CORRIGIR
+    fgets(buffer, sizeof(buffer), stdin); //espera o usuário digitar algo para continuar
     
-    //Comparar duas cartas atributo por atributo (exceto estado, código e nome)
 
-    
+    //Comparar duas cartas atributo por atributo (exceto estado, código e nome)
     printf("\n========================\n");
     printf(" COMPARAÇÃO DAS CARTAS!\n");
     printf("========================\n");
@@ -144,21 +147,26 @@ int main(){
         (pib1 > pib2) ? "Carta 1 vence!" : 
         (pib1 < pib2) ? "Carta 2 vence!" : "Empate!");
 
-    printf("Pontos Turísticos: carta 1 vs carta 2 -> %s\n",
+    printf("Pontos Turísticos: carta 1 (%d) vs carta 2 (%d) -> %s\n", 
+        pontosturisticos1, pontosturisticos2,
         (pontosturisticos1 > pontosturisticos2) ? "Carta 1 vence!" : 
         (pontosturisticos1 < pontosturisticos2) ? "Carta 2 vence!" : "Empate!");
-
-    printf("Densidade Populacional: carta 1 vs carta 2 -> %s\n",
-        (inversoDensidadePop1 > inversoDensidadePop2) ? "Carta 1 vence!" :
-        (inversoDensidadePop1 < inversoDensidadePop2) ? "Carta 2 vence!" : "Empate!");
+    
+    //Para Densidade Populacional, menor valor vence
+    printf("Densidade Populacional: carta 1 (%.2f) vs carta 2 (%.2f) -> %s\n", 
+        densidadepop1, densidadepop2,
+        (densidadepop1 < densidadepop2) ? "Carta 1 vence!" :
+        (densidadepop1 > densidadepop2) ? "Carta 2 vence!" : "Empate!");
         
-    printf("PIB per capita: carta 1 vs carta 2 -> %s\n",
+    printf("PIB per capita: carta 1 (R$ %.2f) vs carta 2 (R$ %.2f) -> %s\n",
+        pibpercapita1, pibpercapita2,
         (pibpercapita1 > pibpercapita2) ? "Carta 1 vence!" :
         (pibpercapita1 < pibpercapita2) ? "Carta 2 vence!" : "Empate!");
         
-    printf("Super Poder: carta 1 vs carta 2 -> %s\n", 
-    (SuperPoder1 > SuperPoder2) ? "Carta 1 vence!" :
-    (SuperPoder1 < SuperPoder2) ? "Carta 2 vence!" : "Empate!");    
+    printf("Super Poder: carta 1 (%.2f) vs carta 2 (%.2f) -> %s\n", 
+        SuperPoder1, SuperPoder2,
+        (SuperPoder1 > SuperPoder2) ? "Carta 1 vence!" :
+        (SuperPoder1 < SuperPoder2) ? "Carta 2 vence!" : "Empate!");    
     
     return 0;
 }
