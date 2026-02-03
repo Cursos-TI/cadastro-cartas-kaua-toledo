@@ -1,6 +1,5 @@
 #include <stdio.h> // Inclui a biblioteca padrão de entrada e saída
 #include <stdlib.h> // Inclui a biblioteca padrão de utilitários
-#include <string.h> // Inclui a biblioteca padrão de manipulação de strings
 
 int main(){
     
