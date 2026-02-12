@@ -122,7 +122,6 @@ int main(){
     float SuperPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + inversoDensidadePop2 + pibpercapita2;
     
     char buffer[10];
-    
     getchar(); //consome o '\n' do último scanf
    
     printf("\nDigite qualquer tecla para iniciar a comparação das cartas...\n");
